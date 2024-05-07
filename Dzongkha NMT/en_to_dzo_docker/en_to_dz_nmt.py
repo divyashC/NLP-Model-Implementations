@@ -2,8 +2,10 @@ import sys
 import logging
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 model_path = "./model/en_to_dz"
 tokenizer_path = "./model/tokenizer_en_to_dz"
